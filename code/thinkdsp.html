@@ -1,0 +1,2186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module thinkdsp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>thinkdsp</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/lestien/Documents/resumen-tutorial-apuntes-python/ThinkDSP/code/thinkdsp.py">/home/lestien/Documents/resumen-tutorial-apuntes-python/ThinkDSP/code/thinkdsp.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;file&nbsp;contains&nbsp;code&nbsp;used&nbsp;in&nbsp;"Think&nbsp;DSP",<br>
+by&nbsp;Allen&nbsp;B.&nbsp;Downey,&nbsp;available&nbsp;from&nbsp;greenteapress.com<br>
+&nbsp;<br>
+Copyright&nbsp;2013&nbsp;Allen&nbsp;B.&nbsp;Downey<br>
+License:&nbsp;GNU&nbsp;GPLv3&nbsp;<a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a></tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="array.html">array</a><br>
+<a href="copy.html">copy</a><br>
+<a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="scipy.html">scipy</a><br>
+<a href="struct.html">struct</a><br>
+<a href="subprocess.html">subprocess</a><br>
+</td><td width="25%" valign=top><a href="thinkplot.html">thinkplot</a><br>
+<a href="warnings.html">warnings</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#Exception">builtins.Exception</a>(<a href="builtins.html#BaseException">builtins.BaseException</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#UnimplementedMethodException">UnimplementedMethodException</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#IntegratedSpectrum">IntegratedSpectrum</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#Signal">Signal</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#Chirp">Chirp</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#ExpoChirp">ExpoChirp</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#Impulses">Impulses</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#SilentSignal">SilentSignal</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#Sinusoid">Sinusoid</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#ComplexSinusoid">ComplexSinusoid</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#GlottalSignal">GlottalSignal</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#ParabolicSignal">ParabolicSignal</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#CubicSignal">CubicSignal</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#SawtoothSignal">SawtoothSignal</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#SquareSignal">SquareSignal</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#TriangleSignal">TriangleSignal</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#SumSignal">SumSignal</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#Spectrogram">Spectrogram</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#WavFileWriter">WavFileWriter</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#Wave">Wave</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#_Noise">_Noise</a>(<a href="thinkdsp.html#Signal">Signal</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#BrownianNoise">BrownianNoise</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#PinkNoise">PinkNoise</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#UncorrelatedGaussianNoise">UncorrelatedGaussianNoise</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#UncorrelatedUniformNoise">UncorrelatedUniformNoise</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="thinkdsp.html#Dct">Dct</a>
+</font></dt><dt><font face="helvetica, arial"><a href="thinkdsp.html#Spectrum">Spectrum</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BrownianNoise">class <strong>BrownianNoise</strong></a>(<a href="thinkdsp.html#_Noise">_Noise</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;Brownian&nbsp;noise,&nbsp;aka&nbsp;red&nbsp;noise.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#BrownianNoise">BrownianNoise</a></dd>
+<dd><a href="thinkdsp.html#_Noise">_Noise</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BrownianNoise-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+Computes&nbsp;Brownian&nbsp;noise&nbsp;by&nbsp;taking&nbsp;the&nbsp;cumulative&nbsp;sum&nbsp;of<br>
+a&nbsp;uniform&nbsp;random&nbsp;series.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><a name="BrownianNoise-__init__"><strong>__init__</strong></a>(self, amp=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;white&nbsp;noise&nbsp;signal.<br>
+&nbsp;<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="BrownianNoise-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="BrownianNoise-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="BrownianNoise-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="BrownianNoise-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Chirp">class <strong>Chirp</strong></a>(<a href="thinkdsp.html#Signal">Signal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;signal&nbsp;with&nbsp;variable&nbsp;frequency.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#Chirp">Chirp</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Chirp-__init__"><strong>__init__</strong></a>(self, start=440, end=880, amp=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;linear&nbsp;chirp.<br>
+&nbsp;<br>
+start:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+end:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<dl><dt><a name="Chirp-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="Chirp-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Chirp-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Chirp-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Chirp-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ComplexSinusoid">class <strong>ComplexSinusoid</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;complex&nbsp;exponential&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#ComplexSinusoid">ComplexSinusoid</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ComplexSinusoid-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="ComplexSinusoid-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="ComplexSinusoid-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ComplexSinusoid-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ComplexSinusoid-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="ComplexSinusoid-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CubicSignal">class <strong>CubicSignal</strong></a>(<a href="thinkdsp.html#ParabolicSignal">ParabolicSignal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;cubic&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#CubicSignal">CubicSignal</a></dd>
+<dd><a href="thinkdsp.html#ParabolicSignal">ParabolicSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CubicSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="CubicSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="CubicSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="CubicSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="CubicSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="CubicSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Dct">class <strong>Dct</strong></a>(<a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;spectrum&nbsp;of&nbsp;a&nbsp;signal&nbsp;using&nbsp;discrete&nbsp;cosine&nbsp;transform.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#Dct">Dct</a></dd>
+<dd><a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Dct-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;DCTs&nbsp;elementwise.<br>
+&nbsp;<br>
+other:&nbsp;DCT<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;DCT</tt></dd></dl>
+
+<dl><dt><a name="Dct-__radd__"><strong>__radd__</strong></a> = <a href="#Dct-__add__">__add__</a>(self, other)</dt></dl>
+
+<dl><dt><a name="Dct-make_wave"><strong>make_wave</strong></a>(self)</dt><dd><tt>Transforms&nbsp;to&nbsp;the&nbsp;time&nbsp;domain.<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>amps</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;sequence&nbsp;of&nbsp;amplitudes&nbsp;(read-only&nbsp;property).<br>
+&nbsp;<br>
+Note:&nbsp;for&nbsp;DCTs,&nbsp;amps&nbsp;are&nbsp;positive&nbsp;or&nbsp;negative&nbsp;real.</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>:<br>
+<dl><dt><a name="Dct-__init__"><strong>__init__</strong></a>(self, hs, fs, framerate, full=False)</dt><dd><tt>Initializes&nbsp;a&nbsp;spectrum.<br>
+&nbsp;<br>
+hs:&nbsp;array&nbsp;of&nbsp;amplitudes&nbsp;(real&nbsp;or&nbsp;complex)<br>
+fs:&nbsp;array&nbsp;of&nbsp;frequencies<br>
+framerate:&nbsp;frames&nbsp;per&nbsp;second<br>
+full:&nbsp;boolean&nbsp;to&nbsp;indicate&nbsp;full&nbsp;or&nbsp;real&nbsp;FFT</tt></dd></dl>
+
+<dl><dt><a name="Dct-copy"><strong>copy</strong></a>(self)</dt><dd><tt>Makes&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Dct-estimate_slope"><strong>estimate_slope</strong></a>(self)</dt><dd><tt>Runs&nbsp;linear&nbsp;regression&nbsp;on&nbsp;log&nbsp;power&nbsp;vs&nbsp;log&nbsp;frequency.<br>
+&nbsp;<br>
+returns:&nbsp;slope,&nbsp;inter,&nbsp;r2,&nbsp;p,&nbsp;stderr</tt></dd></dl>
+
+<dl><dt><a name="Dct-invert"><strong>invert</strong></a>(self)</dt><dd><tt>Inverts&nbsp;this&nbsp;spectrum/filter.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Dct-max_diff"><strong>max_diff</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;maximum&nbsp;absolute&nbsp;difference&nbsp;between&nbsp;spectra.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Dct-peaks"><strong>peaks</strong></a>(self)</dt><dd><tt>Finds&nbsp;the&nbsp;highest&nbsp;peaks&nbsp;and&nbsp;their&nbsp;frequencies.<br>
+&nbsp;<br>
+returns:&nbsp;sorted&nbsp;list&nbsp;of&nbsp;(amplitude,&nbsp;frequency)&nbsp;pairs</tt></dd></dl>
+
+<dl><dt><a name="Dct-plot"><strong>plot</strong></a>(self, high=None, **options)</dt><dd><tt>Plots&nbsp;amplitude&nbsp;vs&nbsp;frequency.<br>
+&nbsp;<br>
+Note:&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;full&nbsp;spectrum,&nbsp;it&nbsp;ignores&nbsp;low&nbsp;and&nbsp;high<br>
+&nbsp;<br>
+high:&nbsp;frequency&nbsp;to&nbsp;cut&nbsp;off&nbsp;at</tt></dd></dl>
+
+<dl><dt><a name="Dct-plot_power"><strong>plot_power</strong></a>(self, high=None, **options)</dt><dd><tt>Plots&nbsp;power&nbsp;vs&nbsp;frequency.<br>
+&nbsp;<br>
+high:&nbsp;frequency&nbsp;to&nbsp;cut&nbsp;off&nbsp;at</tt></dd></dl>
+
+<dl><dt><a name="Dct-ratio"><strong>ratio</strong></a>(self, denom, thresh=1, val=0)</dt><dd><tt>The&nbsp;ratio&nbsp;of&nbsp;two&nbsp;spectrums.<br>
+&nbsp;<br>
+denom:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+thresh:&nbsp;values&nbsp;smaller&nbsp;than&nbsp;this&nbsp;are&nbsp;replaced&nbsp;<br>
+val:&nbsp;with&nbsp;this&nbsp;value<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Dct-render_full"><strong>render_full</strong></a>(self, high=None)</dt><dd><tt>Extracts&nbsp;amps&nbsp;and&nbsp;fs&nbsp;from&nbsp;a&nbsp;full&nbsp;spectrum.<br>
+&nbsp;<br>
+high:&nbsp;cutoff&nbsp;frequency<br>
+&nbsp;<br>
+returns:&nbsp;fs,&nbsp;amps</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>freq_res</strong></dt>
+</dl>
+<dl><dt><strong>max_freq</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;Nyquist&nbsp;frequency&nbsp;for&nbsp;this&nbsp;spectrum.</tt></dd>
+</dl>
+<dl><dt><strong>power</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;sequence&nbsp;of&nbsp;powers&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExpoChirp">class <strong>ExpoChirp</strong></a>(<a href="thinkdsp.html#Chirp">Chirp</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;signal&nbsp;with&nbsp;varying&nbsp;frequency.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#ExpoChirp">ExpoChirp</a></dd>
+<dd><a href="thinkdsp.html#Chirp">Chirp</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ExpoChirp-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Chirp">Chirp</a>:<br>
+<dl><dt><a name="ExpoChirp-__init__"><strong>__init__</strong></a>(self, start=440, end=880, amp=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;linear&nbsp;chirp.<br>
+&nbsp;<br>
+start:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+end:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Chirp">Chirp</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="ExpoChirp-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ExpoChirp-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ExpoChirp-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="ExpoChirp-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GlottalSignal">class <strong>GlottalSignal</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;periodic&nbsp;signal&nbsp;that&nbsp;resembles&nbsp;a&nbsp;glottal&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#GlottalSignal">GlottalSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="GlottalSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="GlottalSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="GlottalSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="GlottalSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="GlottalSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="GlottalSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Impulses">class <strong>Impulses</strong></a>(<a href="thinkdsp.html#Signal">Signal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;silence.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#Impulses">Impulses</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Impulses-__init__"><strong>__init__</strong></a>(self, locations, amps=1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Impulses-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="Impulses-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Impulses-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Impulses-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Impulses-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds&nbsp;(property).<br>
+&nbsp;<br>
+Since&nbsp;this&nbsp;is&nbsp;used&nbsp;primarily&nbsp;for&nbsp;purposes&nbsp;of&nbsp;plotting,<br>
+the&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;return&nbsp;a&nbsp;value,&nbsp;0.1&nbsp;seconds,<br>
+that&nbsp;is&nbsp;reasonable&nbsp;for&nbsp;many&nbsp;signals.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IntegratedSpectrum">class <strong>IntegratedSpectrum</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;integral&nbsp;of&nbsp;a&nbsp;spectrum.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IntegratedSpectrum-__init__"><strong>__init__</strong></a>(self, cs, fs)</dt><dd><tt>Initializes&nbsp;an&nbsp;integrated&nbsp;spectrum:<br>
+&nbsp;<br>
+cs:&nbsp;sequence&nbsp;of&nbsp;cumulative&nbsp;amplitudes<br>
+fs:&nbsp;sequence&nbsp;of&nbsp;frequencies</tt></dd></dl>
+
+<dl><dt><a name="IntegratedSpectrum-estimate_slope"><strong>estimate_slope</strong></a>(self, low=1, high=-12000)</dt><dd><tt>Runs&nbsp;linear&nbsp;regression&nbsp;on&nbsp;log&nbsp;cumulative&nbsp;power&nbsp;vs&nbsp;log&nbsp;frequency.<br>
+&nbsp;<br>
+returns:&nbsp;slope,&nbsp;inter,&nbsp;r2,&nbsp;p,&nbsp;stderr</tt></dd></dl>
+
+<dl><dt><a name="IntegratedSpectrum-plot_power"><strong>plot_power</strong></a>(self, low=0, high=None, expo=False, **options)</dt><dd><tt>Plots&nbsp;the&nbsp;integrated&nbsp;spectrum.<br>
+&nbsp;<br>
+low:&nbsp;int&nbsp;index&nbsp;to&nbsp;start&nbsp;at&nbsp;<br>
+high:&nbsp;int&nbsp;index&nbsp;to&nbsp;end&nbsp;at</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ParabolicSignal">class <strong>ParabolicSignal</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;parabolic&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#ParabolicSignal">ParabolicSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ParabolicSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="ParabolicSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="ParabolicSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ParabolicSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="ParabolicSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="ParabolicSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PinkNoise">class <strong>PinkNoise</strong></a>(<a href="thinkdsp.html#_Noise">_Noise</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;Brownian&nbsp;noise,&nbsp;aka&nbsp;red&nbsp;noise.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#PinkNoise">PinkNoise</a></dd>
+<dd><a href="thinkdsp.html#_Noise">_Noise</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PinkNoise-__init__"><strong>__init__</strong></a>(self, amp=1.0, beta=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;pink&nbsp;noise&nbsp;signal.<br>
+&nbsp;<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<dl><dt><a name="PinkNoise-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="PinkNoise-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="PinkNoise-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="PinkNoise-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SawtoothSignal">class <strong>SawtoothSignal</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;sawtooth&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#SawtoothSignal">SawtoothSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SawtoothSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="SawtoothSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="SawtoothSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SawtoothSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SawtoothSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="SawtoothSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Signal">class <strong>Signal</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;time-varying&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Signal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Signal-__radd__"><strong>__radd__</strong></a> = <a href="#Signal-__add__">__add__</a>(self, other)</dt></dl>
+
+<dl><dt><a name="Signal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Signal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds&nbsp;(property).<br>
+&nbsp;<br>
+Since&nbsp;this&nbsp;is&nbsp;used&nbsp;primarily&nbsp;for&nbsp;purposes&nbsp;of&nbsp;plotting,<br>
+the&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;return&nbsp;a&nbsp;value,&nbsp;0.1&nbsp;seconds,<br>
+that&nbsp;is&nbsp;reasonable&nbsp;for&nbsp;many&nbsp;signals.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SilentSignal">class <strong>SilentSignal</strong></a>(<a href="thinkdsp.html#Signal">Signal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;silence.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#SilentSignal">SilentSignal</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SilentSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="SilentSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SilentSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SilentSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="SilentSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds&nbsp;(property).<br>
+&nbsp;<br>
+Since&nbsp;this&nbsp;is&nbsp;used&nbsp;primarily&nbsp;for&nbsp;purposes&nbsp;of&nbsp;plotting,<br>
+the&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;return&nbsp;a&nbsp;value,&nbsp;0.1&nbsp;seconds,<br>
+that&nbsp;is&nbsp;reasonable&nbsp;for&nbsp;many&nbsp;signals.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sinusoid">class <strong>Sinusoid</strong></a>(<a href="thinkdsp.html#Signal">Signal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Sinusoid-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<dl><dt><a name="Sinusoid-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="Sinusoid-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Sinusoid-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="Sinusoid-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Sinusoid-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Spectrogram">class <strong>Spectrogram</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;spectrum&nbsp;of&nbsp;a&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Spectrogram-__init__"><strong>__init__</strong></a>(self, spec_map, seg_length)</dt><dd><tt>Initialize&nbsp;the&nbsp;spectrogram.<br>
+&nbsp;<br>
+spec_map:&nbsp;map&nbsp;from&nbsp;float&nbsp;time&nbsp;to&nbsp;<a href="#Spectrum">Spectrum</a><br>
+seg_length:&nbsp;number&nbsp;of&nbsp;samples&nbsp;in&nbsp;each&nbsp;segment</tt></dd></dl>
+
+<dl><dt><a name="Spectrogram-any_spectrum"><strong>any_spectrum</strong></a>(self)</dt><dd><tt>Returns&nbsp;an&nbsp;arbitrary&nbsp;spectrum&nbsp;from&nbsp;the&nbsp;spectrogram.</tt></dd></dl>
+
+<dl><dt><a name="Spectrogram-frequencies"><strong>frequencies</strong></a>(self)</dt><dd><tt>Sequence&nbsp;of&nbsp;frequencies.<br>
+&nbsp;<br>
+returns:&nbsp;sequence&nbsp;of&nbsp;float&nbsp;freqencies&nbsp;in&nbsp;Hz.</tt></dd></dl>
+
+<dl><dt><a name="Spectrogram-make_wave"><strong>make_wave</strong></a>(self)</dt><dd><tt>Inverts&nbsp;the&nbsp;spectrogram&nbsp;and&nbsp;returns&nbsp;a&nbsp;<a href="#Wave">Wave</a>.<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrogram-plot"><strong>plot</strong></a>(self, high=None, **options)</dt><dd><tt>Make&nbsp;a&nbsp;pseudocolor&nbsp;plot.<br>
+&nbsp;<br>
+high:&nbsp;highest&nbsp;frequency&nbsp;component&nbsp;to&nbsp;plot</tt></dd></dl>
+
+<dl><dt><a name="Spectrogram-times"><strong>times</strong></a>(self)</dt><dd><tt>Sorted&nbsp;sequence&nbsp;of&nbsp;times.<br>
+&nbsp;<br>
+returns:&nbsp;sequence&nbsp;of&nbsp;float&nbsp;times&nbsp;in&nbsp;seconds</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>freq_res</strong></dt>
+<dd><tt>Frequency&nbsp;resolution&nbsp;in&nbsp;Hz.</tt></dd>
+</dl>
+<dl><dt><strong>time_res</strong></dt>
+<dd><tt>Time&nbsp;resolution&nbsp;in&nbsp;seconds.</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Spectrum">class <strong>Spectrum</strong></a>(<a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;spectrum&nbsp;of&nbsp;a&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#Spectrum">Spectrum</a></dd>
+<dd><a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Spectrum-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;spectrums&nbsp;elementwise.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-__len__"><strong>__len__</strong></a>(self)</dt><dd><tt>Length&nbsp;of&nbsp;the&nbsp;spectrum.</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Multiplies&nbsp;two&nbsp;spectrums&nbsp;elementwise.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-__radd__"><strong>__radd__</strong></a> = <a href="#Spectrum-__add__">__add__</a>(self, other)</dt></dl>
+
+<dl><dt><a name="Spectrum-band_stop"><strong>band_stop</strong></a>(self, low_cutoff, high_cutoff, factor=0)</dt><dd><tt>Attenuate&nbsp;frequencies&nbsp;between&nbsp;the&nbsp;cutoffs.<br>
+&nbsp;<br>
+low_cutoff:&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+high_cutoff:&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;the&nbsp;magnitude&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-convolve"><strong>convolve</strong></a>(self, other)</dt><dd><tt>Convolves&nbsp;two&nbsp;Spectrums.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-differentiate"><strong>differentiate</strong></a>(self)</dt><dd><tt>Apply&nbsp;the&nbsp;differentiation&nbsp;filter.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-high_pass"><strong>high_pass</strong></a>(self, cutoff, factor=0)</dt><dd><tt>Attenuate&nbsp;frequencies&nbsp;below&nbsp;the&nbsp;cutoff.<br>
+&nbsp;<br>
+cutoff:&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;the&nbsp;magnitude&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-integrate"><strong>integrate</strong></a>(self)</dt><dd><tt>Apply&nbsp;the&nbsp;integration&nbsp;filter.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-low_pass"><strong>low_pass</strong></a>(self, cutoff, factor=0)</dt><dd><tt>Attenuate&nbsp;frequencies&nbsp;above&nbsp;the&nbsp;cutoff.<br>
+&nbsp;<br>
+cutoff:&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;the&nbsp;magnitude&nbsp;by</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-make_integrated_spectrum"><strong>make_integrated_spectrum</strong></a>(self)</dt><dd><tt>Makes&nbsp;an&nbsp;integrated&nbsp;spectrum.</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-make_wave"><strong>make_wave</strong></a>(self)</dt><dd><tt>Transforms&nbsp;to&nbsp;the&nbsp;time&nbsp;domain.<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-pink_filter"><strong>pink_filter</strong></a>(self, beta=1)</dt><dd><tt>Apply&nbsp;a&nbsp;filter&nbsp;that&nbsp;would&nbsp;make&nbsp;white&nbsp;noise&nbsp;pink.<br>
+&nbsp;<br>
+beta:&nbsp;exponent&nbsp;of&nbsp;the&nbsp;pink&nbsp;noise</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-scale"><strong>scale</strong></a>(self, factor)</dt><dd><tt>Multiplies&nbsp;all&nbsp;elements&nbsp;by&nbsp;the&nbsp;given&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;what&nbsp;to&nbsp;multiply&nbsp;the&nbsp;magnitude&nbsp;by&nbsp;(could&nbsp;be&nbsp;complex)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>angles</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;sequence&nbsp;of&nbsp;angles&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+<dl><dt><strong>imag</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;imaginary&nbsp;part&nbsp;of&nbsp;the&nbsp;hs&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+<dl><dt><strong>real</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;real&nbsp;part&nbsp;of&nbsp;the&nbsp;hs&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>:<br>
+<dl><dt><a name="Spectrum-__init__"><strong>__init__</strong></a>(self, hs, fs, framerate, full=False)</dt><dd><tt>Initializes&nbsp;a&nbsp;spectrum.<br>
+&nbsp;<br>
+hs:&nbsp;array&nbsp;of&nbsp;amplitudes&nbsp;(real&nbsp;or&nbsp;complex)<br>
+fs:&nbsp;array&nbsp;of&nbsp;frequencies<br>
+framerate:&nbsp;frames&nbsp;per&nbsp;second<br>
+full:&nbsp;boolean&nbsp;to&nbsp;indicate&nbsp;full&nbsp;or&nbsp;real&nbsp;FFT</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-copy"><strong>copy</strong></a>(self)</dt><dd><tt>Makes&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-estimate_slope"><strong>estimate_slope</strong></a>(self)</dt><dd><tt>Runs&nbsp;linear&nbsp;regression&nbsp;on&nbsp;log&nbsp;power&nbsp;vs&nbsp;log&nbsp;frequency.<br>
+&nbsp;<br>
+returns:&nbsp;slope,&nbsp;inter,&nbsp;r2,&nbsp;p,&nbsp;stderr</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-invert"><strong>invert</strong></a>(self)</dt><dd><tt>Inverts&nbsp;this&nbsp;spectrum/filter.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-max_diff"><strong>max_diff</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;maximum&nbsp;absolute&nbsp;difference&nbsp;between&nbsp;spectra.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-peaks"><strong>peaks</strong></a>(self)</dt><dd><tt>Finds&nbsp;the&nbsp;highest&nbsp;peaks&nbsp;and&nbsp;their&nbsp;frequencies.<br>
+&nbsp;<br>
+returns:&nbsp;sorted&nbsp;list&nbsp;of&nbsp;(amplitude,&nbsp;frequency)&nbsp;pairs</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-plot"><strong>plot</strong></a>(self, high=None, **options)</dt><dd><tt>Plots&nbsp;amplitude&nbsp;vs&nbsp;frequency.<br>
+&nbsp;<br>
+Note:&nbsp;if&nbsp;this&nbsp;is&nbsp;a&nbsp;full&nbsp;spectrum,&nbsp;it&nbsp;ignores&nbsp;low&nbsp;and&nbsp;high<br>
+&nbsp;<br>
+high:&nbsp;frequency&nbsp;to&nbsp;cut&nbsp;off&nbsp;at</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-plot_power"><strong>plot_power</strong></a>(self, high=None, **options)</dt><dd><tt>Plots&nbsp;power&nbsp;vs&nbsp;frequency.<br>
+&nbsp;<br>
+high:&nbsp;frequency&nbsp;to&nbsp;cut&nbsp;off&nbsp;at</tt></dd></dl>
+
+<dl><dt><a name="Spectrum-ratio"><strong>ratio</strong></a>(self, denom, thresh=1, val=0)</dt><dd><tt>The&nbsp;ratio&nbsp;of&nbsp;two&nbsp;spectrums.<br>
+&nbsp;<br>
+denom:&nbsp;<a href="#Spectrum">Spectrum</a><br>
+thresh:&nbsp;values&nbsp;smaller&nbsp;than&nbsp;this&nbsp;are&nbsp;replaced&nbsp;<br>
+val:&nbsp;with&nbsp;this&nbsp;value<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Spectrum-render_full"><strong>render_full</strong></a>(self, high=None)</dt><dd><tt>Extracts&nbsp;amps&nbsp;and&nbsp;fs&nbsp;from&nbsp;a&nbsp;full&nbsp;spectrum.<br>
+&nbsp;<br>
+high:&nbsp;cutoff&nbsp;frequency<br>
+&nbsp;<br>
+returns:&nbsp;fs,&nbsp;amps</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_SpectrumParent">_SpectrumParent</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>amps</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;sequence&nbsp;of&nbsp;amplitudes&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+<dl><dt><strong>freq_res</strong></dt>
+</dl>
+<dl><dt><strong>max_freq</strong></dt>
+<dd><tt>Returns&nbsp;the&nbsp;Nyquist&nbsp;frequency&nbsp;for&nbsp;this&nbsp;spectrum.</tt></dd>
+</dl>
+<dl><dt><strong>power</strong></dt>
+<dd><tt>Returns&nbsp;a&nbsp;sequence&nbsp;of&nbsp;powers&nbsp;(read-only&nbsp;property).</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SquareSignal">class <strong>SquareSignal</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;square&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#SquareSignal">SquareSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SquareSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="SquareSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="SquareSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SquareSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SquareSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="SquareSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SumSignal">class <strong>SumSignal</strong></a>(<a href="thinkdsp.html#Signal">Signal</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;the&nbsp;sum&nbsp;of&nbsp;signals.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#SumSignal">SumSignal</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SumSignal-__init__"><strong>__init__</strong></a>(self, *args)</dt><dd><tt>Initializes&nbsp;the&nbsp;sum.<br>
+&nbsp;<br>
+args:&nbsp;tuple&nbsp;of&nbsp;signals</tt></dd></dl>
+
+<dl><dt><a name="SumSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;is&nbsp;not&nbsp;correct;&nbsp;it's&nbsp;mostly&nbsp;a&nbsp;placekeeper.<br>
+&nbsp;<br>
+But&nbsp;it&nbsp;is&nbsp;correct&nbsp;for&nbsp;a&nbsp;harmonic&nbsp;sequence&nbsp;where&nbsp;all<br>
+component&nbsp;frequencies&nbsp;are&nbsp;multiples&nbsp;of&nbsp;the&nbsp;fundamental.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="SumSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SumSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="SumSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="SumSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TriangleSignal">class <strong>TriangleSignal</strong></a>(<a href="thinkdsp.html#Sinusoid">Sinusoid</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;triangle&nbsp;signal.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#TriangleSignal">TriangleSignal</a></dd>
+<dd><a href="thinkdsp.html#Sinusoid">Sinusoid</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TriangleSignal-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><a name="TriangleSignal-__init__"><strong>__init__</strong></a>(self, freq=440, amp=1.0, offset=0, func=&lt;ufunc 'sin'&gt;)</dt><dd><tt>Initializes&nbsp;a&nbsp;sinusoidal&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+func:&nbsp;function&nbsp;that&nbsp;maps&nbsp;phase&nbsp;to&nbsp;amplitude</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Sinusoid">Sinusoid</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="TriangleSignal-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="TriangleSignal-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="TriangleSignal-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="TriangleSignal-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UncorrelatedGaussianNoise">class <strong>UncorrelatedGaussianNoise</strong></a>(<a href="thinkdsp.html#_Noise">_Noise</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;uncorrelated&nbsp;gaussian&nbsp;noise.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#UncorrelatedGaussianNoise">UncorrelatedGaussianNoise</a></dd>
+<dd><a href="thinkdsp.html#_Noise">_Noise</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="UncorrelatedGaussianNoise-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><a name="UncorrelatedGaussianNoise-__init__"><strong>__init__</strong></a>(self, amp=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;white&nbsp;noise&nbsp;signal.<br>
+&nbsp;<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="UncorrelatedGaussianNoise-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedGaussianNoise-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedGaussianNoise-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedGaussianNoise-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UncorrelatedUniformNoise">class <strong>UncorrelatedUniformNoise</strong></a>(<a href="thinkdsp.html#_Noise">_Noise</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;uncorrelated&nbsp;uniform&nbsp;noise.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#UncorrelatedUniformNoise">UncorrelatedUniformNoise</a></dd>
+<dd><a href="thinkdsp.html#_Noise">_Noise</a></dd>
+<dd><a href="thinkdsp.html#Signal">Signal</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="UncorrelatedUniformNoise-evaluate"><strong>evaluate</strong></a>(self, ts)</dt><dd><tt>Evaluates&nbsp;the&nbsp;signal&nbsp;at&nbsp;the&nbsp;given&nbsp;times.<br>
+&nbsp;<br>
+ts:&nbsp;float&nbsp;array&nbsp;of&nbsp;times<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;wave&nbsp;array</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><a name="UncorrelatedUniformNoise-__init__"><strong>__init__</strong></a>(self, amp=1.0)</dt><dd><tt>Initializes&nbsp;a&nbsp;white&nbsp;noise&nbsp;signal.<br>
+&nbsp;<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#_Noise">_Noise</a>:<br>
+<dl><dt><strong>period</strong></dt>
+<dd><tt>Period&nbsp;of&nbsp;the&nbsp;signal&nbsp;in&nbsp;seconds.<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;seconds</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><a name="UncorrelatedUniformNoise-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedUniformNoise-__radd__"><strong>__radd__</strong></a> = __add__(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;signals.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Signal">Signal</a><br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Signal">Signal</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedUniformNoise-make_wave"><strong>make_wave</strong></a>(self, duration=1, start=0, framerate=11025)</dt><dd><tt>Makes&nbsp;a&nbsp;<a href="#Wave">Wave</a>&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+start:&nbsp;float&nbsp;seconds<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="UncorrelatedUniformNoise-plot"><strong>plot</strong></a>(self, framerate=11025)</dt><dd><tt>Plots&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;plot&nbsp;three&nbsp;periods.<br>
+&nbsp;<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="thinkdsp.html#Signal">Signal</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="UnimplementedMethodException">class <strong>UnimplementedMethodException</strong></a>(<a href="builtins.html#Exception">builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="builtins.html#Exception">Exception</a>&nbsp;if&nbsp;someone&nbsp;calls&nbsp;a&nbsp;method&nbsp;that&nbsp;should&nbsp;be&nbsp;overridden.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="thinkdsp.html#UnimplementedMethodException">UnimplementedMethodException</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#Exception">builtins.Exception</a>:<br>
+<dl><dt><a name="UnimplementedMethodException-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="UnimplementedMethodException-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="UnimplementedMethodException-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="UnimplementedMethodException-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt><a href="builtins.html#Exception">Exception</a>.<a href="#UnimplementedMethodException-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="WavFileWriter">class <strong>WavFileWriter</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Writes&nbsp;wav&nbsp;files.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="WavFileWriter-__init__"><strong>__init__</strong></a>(self, filename='sound.wav', framerate=11025)</dt><dd><tt>Opens&nbsp;the&nbsp;file&nbsp;and&nbsp;sets&nbsp;parameters.<br>
+&nbsp;<br>
+filename:&nbsp;string<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<dl><dt><a name="WavFileWriter-close"><strong>close</strong></a>(self, duration=0)</dt><dd><tt>Closes&nbsp;the&nbsp;file.<br>
+&nbsp;<br>
+duration:&nbsp;how&nbsp;many&nbsp;seconds&nbsp;of&nbsp;silence&nbsp;to&nbsp;append</tt></dd></dl>
+
+<dl><dt><a name="WavFileWriter-write"><strong>write</strong></a>(self, wave)</dt><dd><tt>Writes&nbsp;a&nbsp;wave.<br>
+&nbsp;<br>
+wave:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Wave">class <strong>Wave</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Represents&nbsp;a&nbsp;discrete-time&nbsp;waveform.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Wave-__add__"><strong>__add__</strong></a>(self, other)</dt><dd><tt>Adds&nbsp;two&nbsp;waves&nbsp;elementwise.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-__init__"><strong>__init__</strong></a>(self, ys, ts=None, framerate=None)</dt><dd><tt>Initializes&nbsp;the&nbsp;wave.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+ts:&nbsp;array&nbsp;of&nbsp;times<br>
+framerate:&nbsp;samples&nbsp;per&nbsp;second</tt></dd></dl>
+
+<dl><dt><a name="Wave-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Wave-__mul__"><strong>__mul__</strong></a>(self, other)</dt><dd><tt>Multiplies&nbsp;two&nbsp;waves&nbsp;elementwise.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;operation&nbsp;ignores&nbsp;the&nbsp;timestamps;&nbsp;the&nbsp;result<br>
+has&nbsp;the&nbsp;timestamps&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-__or__"><strong>__or__</strong></a>(self, other)</dt><dd><tt>Concatenates&nbsp;two&nbsp;waves.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-__radd__"><strong>__radd__</strong></a> = <a href="#Wave-__add__">__add__</a>(self, other)</dt></dl>
+
+<dl><dt><a name="Wave-apodize"><strong>apodize</strong></a>(self, denom=20, duration=0.1)</dt><dd><tt>Tapers&nbsp;the&nbsp;amplitude&nbsp;at&nbsp;the&nbsp;beginning&nbsp;and&nbsp;end&nbsp;of&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+Tapers&nbsp;either&nbsp;the&nbsp;given&nbsp;duration&nbsp;of&nbsp;time&nbsp;or&nbsp;the&nbsp;given<br>
+fraction&nbsp;of&nbsp;the&nbsp;total&nbsp;duration,&nbsp;whichever&nbsp;is&nbsp;less.<br>
+&nbsp;<br>
+denom:&nbsp;float&nbsp;fraction&nbsp;of&nbsp;the&nbsp;segment&nbsp;to&nbsp;taper<br>
+duration:&nbsp;float&nbsp;duration&nbsp;of&nbsp;the&nbsp;taper&nbsp;in&nbsp;seconds</tt></dd></dl>
+
+<dl><dt><a name="Wave-convolve"><strong>convolve</strong></a>(self, other)</dt><dd><tt>Convolves&nbsp;two&nbsp;waves.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;operation&nbsp;ignores&nbsp;the&nbsp;timestamps;&nbsp;the&nbsp;result<br>
+has&nbsp;the&nbsp;timestamps&nbsp;of&nbsp;self.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a>&nbsp;or&nbsp;NumPy&nbsp;array<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-copy"><strong>copy</strong></a>(self)</dt><dd><tt>Makes&nbsp;a&nbsp;copy.<br>
+&nbsp;<br>
+Returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-corr"><strong>corr</strong></a>(self, other)</dt><dd><tt>Correlation&nbsp;coefficient&nbsp;two&nbsp;waves.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;coefficient&nbsp;of&nbsp;correlation</tt></dd></dl>
+
+<dl><dt><a name="Wave-cos_cov"><strong>cos_cov</strong></a>(self, k)</dt><dd><tt>Covariance&nbsp;with&nbsp;a&nbsp;cosine&nbsp;signal.<br>
+&nbsp;<br>
+freq:&nbsp;freq&nbsp;of&nbsp;the&nbsp;cosine&nbsp;signal&nbsp;in&nbsp;Hz<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;covariance</tt></dd></dl>
+
+<dl><dt><a name="Wave-cos_transform"><strong>cos_transform</strong></a>(self)</dt><dd><tt>Discrete&nbsp;cosine&nbsp;transform.<br>
+&nbsp;<br>
+returns:&nbsp;list&nbsp;of&nbsp;frequency,&nbsp;cov&nbsp;pairs</tt></dd></dl>
+
+<dl><dt><a name="Wave-cov"><strong>cov</strong></a>(self, other)</dt><dd><tt>Covariance&nbsp;of&nbsp;two&nbsp;unbiased&nbsp;waves.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Wave-cov_mat"><strong>cov_mat</strong></a>(self, other)</dt><dd><tt>Covariance&nbsp;matrix&nbsp;of&nbsp;two&nbsp;waves.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;2x2&nbsp;covariance&nbsp;matrix</tt></dd></dl>
+
+<dl><dt><a name="Wave-cumsum"><strong>cumsum</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;cumulative&nbsp;sum&nbsp;of&nbsp;the&nbsp;elements.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-diff"><strong>diff</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;difference&nbsp;between&nbsp;successive&nbsp;elements.<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-find_index"><strong>find_index</strong></a>(self, t)</dt><dd><tt>Find&nbsp;the&nbsp;index&nbsp;corresponding&nbsp;to&nbsp;a&nbsp;given&nbsp;time.</tt></dd></dl>
+
+<dl><dt><a name="Wave-get_xfactor"><strong>get_xfactor</strong></a>(self, options)</dt></dl>
+
+<dl><dt><a name="Wave-hamming"><strong>hamming</strong></a>(self)</dt><dd><tt>Apply&nbsp;a&nbsp;Hamming&nbsp;window&nbsp;to&nbsp;the&nbsp;wave.</tt></dd></dl>
+
+<dl><dt><a name="Wave-make_audio"><strong>make_audio</strong></a>(self)</dt><dd><tt>Makes&nbsp;an&nbsp;IPython&nbsp;Audio&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="Wave-make_dct"><strong>make_dct</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;DCT&nbsp;of&nbsp;this&nbsp;wave.</tt></dd></dl>
+
+<dl><dt><a name="Wave-make_spectrogram"><strong>make_spectrogram</strong></a>(self, seg_length, win_flag=True)</dt><dd><tt>Computes&nbsp;the&nbsp;spectrogram&nbsp;of&nbsp;the&nbsp;wave.<br>
+&nbsp;<br>
+seg_length:&nbsp;number&nbsp;of&nbsp;samples&nbsp;in&nbsp;each&nbsp;segment<br>
+win_flag:&nbsp;boolean,&nbsp;whether&nbsp;to&nbsp;apply&nbsp;hamming&nbsp;window&nbsp;to&nbsp;each&nbsp;segment<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Spectrogram">Spectrogram</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-make_spectrum"><strong>make_spectrum</strong></a>(self, full=False)</dt><dd><tt>Computes&nbsp;the&nbsp;spectrum&nbsp;using&nbsp;FFT.<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Spectrum">Spectrum</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-max_diff"><strong>max_diff</strong></a>(self, other)</dt><dd><tt>Computes&nbsp;the&nbsp;maximum&nbsp;absolute&nbsp;difference&nbsp;between&nbsp;waves.<br>
+&nbsp;<br>
+other:&nbsp;<a href="#Wave">Wave</a><br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+
+<dl><dt><a name="Wave-normalize"><strong>normalize</strong></a>(self, amp=1.0)</dt><dd><tt>Normalizes&nbsp;the&nbsp;signal&nbsp;to&nbsp;the&nbsp;given&nbsp;amplitude.<br>
+&nbsp;<br>
+amp:&nbsp;float&nbsp;amplitude</tt></dd></dl>
+
+<dl><dt><a name="Wave-play"><strong>play</strong></a>(self, filename='sound.wav')</dt><dd><tt>Plays&nbsp;a&nbsp;wave&nbsp;file.<br>
+&nbsp;<br>
+filename:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="Wave-plot"><strong>plot</strong></a>(self, **options)</dt><dd><tt>Plots&nbsp;the&nbsp;wave.</tt></dd></dl>
+
+<dl><dt><a name="Wave-plot_vlines"><strong>plot_vlines</strong></a>(self, **options)</dt><dd><tt>Plots&nbsp;the&nbsp;wave&nbsp;with&nbsp;vertical&nbsp;lines&nbsp;for&nbsp;samples.</tt></dd></dl>
+
+<dl><dt><a name="Wave-quantize"><strong>quantize</strong></a>(self, bound, dtype)</dt><dd><tt>Maps&nbsp;the&nbsp;waveform&nbsp;to&nbsp;quanta.<br>
+&nbsp;<br>
+bound:&nbsp;maximum&nbsp;amplitude<br>
+dtype:&nbsp;numpy&nbsp;data&nbsp;type&nbsp;or&nbsp;string<br>
+&nbsp;<br>
+returns:&nbsp;quantized&nbsp;signal</tt></dd></dl>
+
+<dl><dt><a name="Wave-roll"><strong>roll</strong></a>(self, roll)</dt><dd><tt>Rolls&nbsp;this&nbsp;wave&nbsp;by&nbsp;the&nbsp;given&nbsp;number&nbsp;of&nbsp;locations.</tt></dd></dl>
+
+<dl><dt><a name="Wave-scale"><strong>scale</strong></a>(self, factor)</dt><dd><tt>Multplies&nbsp;the&nbsp;wave&nbsp;by&nbsp;a&nbsp;factor.<br>
+&nbsp;<br>
+factor:&nbsp;scale&nbsp;factor</tt></dd></dl>
+
+<dl><dt><a name="Wave-segment"><strong>segment</strong></a>(self, start=None, duration=None)</dt><dd><tt>Extracts&nbsp;a&nbsp;segment.<br>
+&nbsp;<br>
+start:&nbsp;float&nbsp;start&nbsp;time&nbsp;in&nbsp;seconds<br>
+duration:&nbsp;float&nbsp;duration&nbsp;in&nbsp;seconds<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+
+<dl><dt><a name="Wave-shift"><strong>shift</strong></a>(self, shift)</dt><dd><tt>Shifts&nbsp;the&nbsp;wave&nbsp;left&nbsp;or&nbsp;right&nbsp;in&nbsp;time.<br>
+&nbsp;<br>
+shift:&nbsp;float&nbsp;time&nbsp;shift</tt></dd></dl>
+
+<dl><dt><a name="Wave-slice"><strong>slice</strong></a>(self, i, j)</dt><dd><tt>Makes&nbsp;a&nbsp;slice&nbsp;from&nbsp;a&nbsp;<a href="#Wave">Wave</a>.<br>
+&nbsp;<br>
+i:&nbsp;first&nbsp;slice&nbsp;index<br>
+j:&nbsp;second&nbsp;slice&nbsp;index</tt></dd></dl>
+
+<dl><dt><a name="Wave-truncate"><strong>truncate</strong></a>(self, n)</dt><dd><tt>Trims&nbsp;this&nbsp;wave&nbsp;to&nbsp;the&nbsp;given&nbsp;length.<br>
+&nbsp;<br>
+n:&nbsp;integer&nbsp;index</tt></dd></dl>
+
+<dl><dt><a name="Wave-unbias"><strong>unbias</strong></a>(self)</dt><dd><tt>Unbiases&nbsp;the&nbsp;signal.</tt></dd></dl>
+
+<dl><dt><a name="Wave-window"><strong>window</strong></a>(self, window)</dt><dd><tt>Apply&nbsp;a&nbsp;window&nbsp;to&nbsp;the&nbsp;wave.<br>
+&nbsp;<br>
+window:&nbsp;sequence&nbsp;of&nbsp;multipliers,&nbsp;same&nbsp;length&nbsp;as&nbsp;self.<strong>ys</strong></tt></dd></dl>
+
+<dl><dt><a name="Wave-write"><strong>write</strong></a>(self, filename='sound.wav')</dt><dd><tt>Write&nbsp;a&nbsp;wave&nbsp;file.<br>
+&nbsp;<br>
+filename:&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="Wave-zero_pad"><strong>zero_pad</strong></a>(self, n)</dt><dd><tt>Trims&nbsp;this&nbsp;wave&nbsp;to&nbsp;the&nbsp;given&nbsp;length.<br>
+&nbsp;<br>
+n:&nbsp;integer&nbsp;index</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>duration</strong></dt>
+<dd><tt>Duration&nbsp;(property).<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;duration&nbsp;in&nbsp;seconds</tt></dd>
+</dl>
+<dl><dt><strong>end</strong></dt>
+</dl>
+<dl><dt><strong>start</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-CosSignal"><strong>CosSignal</strong></a>(freq=440, amp=1.0, offset=0)</dt><dd><tt>Makes&nbsp;a&nbsp;cosine&nbsp;<a href="#Sinusoid">Sinusoid</a>.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Sinusoid">Sinusoid</a>&nbsp;<a href="builtins.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-SinSignal"><strong>SinSignal</strong></a>(freq=440, amp=1.0, offset=0)</dt><dd><tt>Makes&nbsp;a&nbsp;sine&nbsp;<a href="#Sinusoid">Sinusoid</a>.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Sinusoid">Sinusoid</a>&nbsp;<a href="builtins.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-Sinc"><strong>Sinc</strong></a>(freq=440, amp=1.0, offset=0)</dt><dd><tt>Makes&nbsp;a&nbsp;Sinc&nbsp;function.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz<br>
+amp:&nbsp;float&nbsp;amplitude,&nbsp;1.0&nbsp;is&nbsp;nominal&nbsp;max<br>
+offset:&nbsp;float&nbsp;phase&nbsp;offset&nbsp;in&nbsp;radians<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Sinusoid">Sinusoid</a>&nbsp;<a href="builtins.html#object">object</a></tt></dd></dl>
+ <dl><dt><a name="-apodize"><strong>apodize</strong></a>(ys, framerate, denom=20, duration=0.1)</dt><dd><tt>Tapers&nbsp;the&nbsp;amplitude&nbsp;at&nbsp;the&nbsp;beginning&nbsp;and&nbsp;end&nbsp;of&nbsp;the&nbsp;signal.<br>
+&nbsp;<br>
+Tapers&nbsp;either&nbsp;the&nbsp;given&nbsp;duration&nbsp;of&nbsp;time&nbsp;or&nbsp;the&nbsp;given<br>
+fraction&nbsp;of&nbsp;the&nbsp;total&nbsp;duration,&nbsp;whichever&nbsp;is&nbsp;less.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+denom:&nbsp;float&nbsp;fraction&nbsp;of&nbsp;the&nbsp;segment&nbsp;to&nbsp;taper<br>
+duration:&nbsp;float&nbsp;duration&nbsp;of&nbsp;the&nbsp;taper&nbsp;in&nbsp;seconds<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-cos_wave"><strong>cos_wave</strong></a>(freq, duration=1, offset=0)</dt><dd><tt>Makes&nbsp;a&nbsp;cosine&nbsp;wave&nbsp;with&nbsp;the&nbsp;given&nbsp;parameters.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;cycles&nbsp;per&nbsp;second<br>
+duration:&nbsp;float&nbsp;seconds<br>
+offset:&nbsp;float&nbsp;radians<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-find_index"><strong>find_index</strong></a>(x, xs)</dt><dd><tt>Find&nbsp;the&nbsp;index&nbsp;corresponding&nbsp;to&nbsp;a&nbsp;given&nbsp;value&nbsp;in&nbsp;an&nbsp;array.</tt></dd></dl>
+ <dl><dt><a name="-infer_framerate"><strong>infer_framerate</strong></a>(ts)</dt><dd><tt>Given&nbsp;ts,&nbsp;find&nbsp;the&nbsp;framerate.<br>
+&nbsp;<br>
+Assumes&nbsp;that&nbsp;the&nbsp;ts&nbsp;are&nbsp;equally&nbsp;spaced.<br>
+&nbsp;<br>
+ts:&nbsp;sequence&nbsp;of&nbsp;times&nbsp;in&nbsp;seconds<br>
+&nbsp;<br>
+returns:&nbsp;frames&nbsp;per&nbsp;second</tt></dd></dl>
+ <dl><dt><a name="-mag"><strong>mag</strong></a>(a)</dt><dd><tt>Computes&nbsp;the&nbsp;magnitude&nbsp;of&nbsp;a&nbsp;numpy&nbsp;array.<br>
+&nbsp;<br>
+a:&nbsp;numpy&nbsp;array<br>
+&nbsp;<br>
+returns:&nbsp;float</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-make_chord"><strong>make_chord</strong></a>(midi_nums, duration, sig_cons=&lt;function CosSignal at 0x7f43b33a00d0&gt;, framerate=11025)</dt><dd><tt>Make&nbsp;a&nbsp;chord&nbsp;with&nbsp;the&nbsp;given&nbsp;duration.<br>
+&nbsp;<br>
+midi_nums:&nbsp;sequence&nbsp;of&nbsp;int&nbsp;MIDI&nbsp;note&nbsp;numbers<br>
+duration:&nbsp;float&nbsp;seconds<br>
+sig_cons:&nbsp;<a href="#Signal">Signal</a>&nbsp;constructor&nbsp;function<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-make_note"><strong>make_note</strong></a>(midi_num, duration, sig_cons=&lt;function CosSignal at 0x7f43b33a00d0&gt;, framerate=11025)</dt><dd><tt>Make&nbsp;a&nbsp;MIDI&nbsp;note&nbsp;with&nbsp;the&nbsp;given&nbsp;duration.<br>
+&nbsp;<br>
+midi_num:&nbsp;int&nbsp;MIDI&nbsp;note&nbsp;number<br>
+duration:&nbsp;float&nbsp;seconds<br>
+sig_cons:&nbsp;<a href="#Signal">Signal</a>&nbsp;constructor&nbsp;function<br>
+framerate:&nbsp;int&nbsp;frames&nbsp;per&nbsp;second<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-midi_to_freq"><strong>midi_to_freq</strong></a>(midi_num)</dt><dd><tt>Converts&nbsp;MIDI&nbsp;note&nbsp;number&nbsp;to&nbsp;frequency.<br>
+&nbsp;<br>
+midi_num:&nbsp;int&nbsp;MIDI&nbsp;note&nbsp;number<br>
+&nbsp;<br>
+returns:&nbsp;float&nbsp;frequency&nbsp;in&nbsp;Hz</tt></dd></dl>
+ <dl><dt><a name="-normalize"><strong>normalize</strong></a>(ys, amp=1.0)</dt><dd><tt>Normalizes&nbsp;a&nbsp;wave&nbsp;array&nbsp;so&nbsp;the&nbsp;maximum&nbsp;amplitude&nbsp;is&nbsp;+amp&nbsp;or&nbsp;-amp.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+amp:&nbsp;max&nbsp;amplitude&nbsp;(pos&nbsp;or&nbsp;neg)&nbsp;in&nbsp;result<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-play_wave"><strong>play_wave</strong></a>(filename='sound.wav', player='aplay')</dt><dd><tt>Plays&nbsp;a&nbsp;wave&nbsp;file.<br>
+&nbsp;<br>
+filename:&nbsp;string<br>
+player:&nbsp;string&nbsp;name&nbsp;of&nbsp;executable&nbsp;that&nbsp;plays&nbsp;wav&nbsp;files</tt></dd></dl>
+ <dl><dt><a name="-quantize"><strong>quantize</strong></a>(ys, bound, dtype)</dt><dd><tt>Maps&nbsp;the&nbsp;waveform&nbsp;to&nbsp;quanta.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+bound:&nbsp;maximum&nbsp;amplitude<br>
+dtype:&nbsp;numpy&nbsp;data&nbsp;type&nbsp;of&nbsp;the&nbsp;result<br>
+&nbsp;<br>
+returns:&nbsp;quantized&nbsp;signal</tt></dd></dl>
+ <dl><dt><a name="-random_seed"><strong>random_seed</strong></a>(x)</dt><dd><tt>Initialize&nbsp;the&nbsp;random&nbsp;and&nbsp;np.random&nbsp;generators.<br>
+&nbsp;<br>
+x:&nbsp;int&nbsp;seed</tt></dd></dl>
+ <dl><dt><a name="-read_wave"><strong>read_wave</strong></a>(filename='sound.wav')</dt><dd><tt>Reads&nbsp;a&nbsp;wave&nbsp;file.<br>
+&nbsp;<br>
+filename:&nbsp;string<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-rest"><strong>rest</strong></a>(duration)</dt><dd><tt>Makes&nbsp;a&nbsp;rest&nbsp;of&nbsp;the&nbsp;given&nbsp;duration.<br>
+&nbsp;<br>
+duration:&nbsp;float&nbsp;seconds<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-shift_left"><strong>shift_left</strong></a>(ys, shift)</dt><dd><tt>Shifts&nbsp;a&nbsp;wave&nbsp;array&nbsp;to&nbsp;the&nbsp;left.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+shift:&nbsp;integer&nbsp;shift<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-shift_right"><strong>shift_right</strong></a>(ys, shift)</dt><dd><tt>Shifts&nbsp;a&nbsp;wave&nbsp;array&nbsp;to&nbsp;the&nbsp;right&nbsp;and&nbsp;zero&nbsp;pads.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+shift:&nbsp;integer&nbsp;shift<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-sin_wave"><strong>sin_wave</strong></a>(freq, duration=1, offset=0)</dt><dd><tt>Makes&nbsp;a&nbsp;sine&nbsp;wave&nbsp;with&nbsp;the&nbsp;given&nbsp;parameters.<br>
+&nbsp;<br>
+freq:&nbsp;float&nbsp;cycles&nbsp;per&nbsp;second<br>
+duration:&nbsp;float&nbsp;seconds<br>
+offset:&nbsp;float&nbsp;radians<br>
+&nbsp;<br>
+returns:&nbsp;<a href="#Wave">Wave</a></tt></dd></dl>
+ <dl><dt><a name="-truncate"><strong>truncate</strong></a>(ys, n)</dt><dd><tt>Trims&nbsp;a&nbsp;wave&nbsp;array&nbsp;to&nbsp;the&nbsp;given&nbsp;length.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+n:&nbsp;integer&nbsp;length<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-unbias"><strong>unbias</strong></a>(ys)</dt><dd><tt>Shifts&nbsp;a&nbsp;wave&nbsp;array&nbsp;so&nbsp;it&nbsp;has&nbsp;mean&nbsp;0.<br>
+&nbsp;<br>
+ys:&nbsp;wave&nbsp;array<br>
+&nbsp;<br>
+returns:&nbsp;wave&nbsp;array</tt></dd></dl>
+ <dl><dt><a name="-zero_pad"><strong>zero_pad</strong></a>(array, n)</dt><dd><tt>Extends&nbsp;an&nbsp;array&nbsp;with&nbsp;zeros.<br>
+&nbsp;<br>
+array:&nbsp;numpy&nbsp;array<br>
+n:&nbsp;length&nbsp;of&nbsp;result<br>
+&nbsp;<br>
+returns:&nbsp;new&nbsp;NumPy&nbsp;array</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PI2</strong> = 6.283185307179586<br>
+<strong>division</strong> = _Feature((2, 2, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 8192)<br>
+<strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 65536)</td></tr></table>
+</body></html>
